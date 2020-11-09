@@ -59,10 +59,11 @@ dockutil --add '~/Downloads' --view fan --display stack --sort dateadded
 #
 # Miniconda install
 #
-curl -O "https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
-bash Miniconda3-latest-MacOSX-x86_64.sh -b
-export PATH="$HOME/miniconda3/bin:$PATH"
-conda init zsh
+# curl -O "https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
+# bash Miniconda3-latest-MacOSX-x86_64.sh -b
+# export PATH="$HOME/miniconda3/bin:$PATH"
+brew cask install miniconda
+conda init "$(basename "${SHELL}")"
 conda config --append channels conda-forge
 rm Miniconda3-latest-MacOSX-x86_64.sh
 
